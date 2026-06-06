@@ -4,7 +4,7 @@ const commit = await (await fetch("https://api.github.com/repos/gottyduke/dkutil
 const lastUpdate = new Date(commit.commit.author.date).toISOString().slice(0, 10)
 
 export default defineConfig({
-  base: "/",
+  base: "/DKUtil/",
 
   title: "DKUtil",
   description:
