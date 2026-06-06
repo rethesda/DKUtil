@@ -4,47 +4,46 @@ const commit = await (await fetch("https://api.github.com/repos/gottyduke/dkutil
 const lastUpdate = new Date(commit.commit.author.date).toISOString().slice(0, 10)
 
 export default defineConfig({
-    base: '/DKUtil/',
+  base: "/",
 
-    title: 'DKUtil',
-    description: 'Some utility headers to help with windows x64 native plugin development',
-    lang: 'en-US',
+  title: "DKUtil",
+  description:
+    "Some utility headers to help with windows x64 native plugin development",
+  lang: "en-US",
 
-    lastUpdated: true,
-    cleanUrls: true,
-    metaChunk: true,
+  lastUpdated: true,
+  cleanUrls: true,
+  metaChunk: true,
 
-    themeConfig: {
-        socialLinks: [
-            { icon: 'github', link: 'https://github.com/gottyduke' }
-        ],
+  themeConfig: {
+    socialLinks: [{ icon: "github", link: "https://github.com/gottyduke" }],
 
-        search: {
-            provider: 'local',
-        },
+    search: {
+      provider: "local",
+    },
 
-        nav: makeNavBar(),
+    nav: makeNavBar(),
 
-        sidebar: {
-            '/dkutil/': { base: '/dkutil/', items: makeSidebarDKUtil() },
-            '/logger/': { base: '/logger/', items: makeSidebarLogger() },
-            '/config/': { base: '/config/', items: makeSidebarConfig() },
-            '/hooks/': { base: '/hooks/', items: makeSidebarHooks() },
-            '/utils/': { base: '/utils/', items: makeSidebarUtils() },
-            '/extra/': { base: '/extra/', items: makeSidebarExtra() },
-        },
+    sidebar: {
+      "/dkutil/": { base: "/dkutil/", items: makeSidebarDKUtil() },
+      "/logger/": { base: "/logger/", items: makeSidebarLogger() },
+      "/config/": { base: "/config/", items: makeSidebarConfig() },
+      "/hooks/": { base: "/hooks/", items: makeSidebarHooks() },
+      "/utils/": { base: "/utils/", items: makeSidebarUtils() },
+      "/extra/": { base: "/extra/", items: makeSidebarExtra() },
+    },
 
-        editLink: {
-            pattern: 'https://github.com/gottyduke/dkutil/edit/master/docs/:path',
-            text: 'Edit current page on GitHub'
-        },
+    editLink: {
+      pattern: "https://github.com/gottyduke/dkutil/edit/master/docs/:path",
+      text: "Edit current page on GitHub",
+    },
 
-        footer: {
-            message: 'Released under the MIT License',
-            copyright: 'Copyright © 2020-present DK'
-        },
-    }
-})
+    footer: {
+      message: "Released under the MIT License",
+      copyright: "Copyright © 2020-present DK",
+    },
+  },
+});
 
 function makeNavBar(): DefaultTheme.NavItem[] {
     return [
